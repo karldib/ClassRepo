@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'DS HermannGotisch';
+    src: url('DSHermannGotisch.eot');
+    src: url('DSHermannGotisch.eot?#iefix') format('embedded-opentype'),
+        url('DSHermannGotisch.woff2') format('woff2'),
+        url('DSHermannGotisch.woff') format('woff'),
+        url('DSHermannGotisch.ttf') format('truetype'),
+        url('DSHermannGotisch.svg#DSHermannGotisch') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
