@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CYCLO BONETTE</title>
+    <link rel="stylesheet" type="text/css" href="./css/bookings.css"
+    
+  </head>
+  <body>
+  <header>
+    
+    <span class="mobile-menu">&#8801;</span>
+    <nav>
+      <ul class="menu">
+        <li><a href="./index.html">home</a></li>
+        <li><a href="./about.html">about</a></li>
+        <li><a href="#">discog</a></li>
+        <li><a href="#">support</a></li>
+        <li><a href="./bookings.html">bookings</a></li>
+
+
+      </ul>
+    </nav>
+  </header>
+
+
+  
+  <!-- <h1 class="brand"> <a href="#">CYCLO </a></h1>
+  <h1 class="brand"> <a href="#">BONETTE</a></h1> -->
+<img class="background" src="./img/Screen Shot 2024-03-12 at 4.15.40 PM.png"/>
+  <main class="container">
+    <!-- <div class="thumb"> -->
+      <!-- <h1 class="brand aboutcolor"> <a href="#">CYCLO BONETTE</a></h1> -->
+      <!-- <h1 class="brand"> <a href="#">BONETTE</a></h1> -->
+        <div class="img">
+            <img class="kay" src="./img/kay.jpeg"/> 
+            
+
+      <!-- </div> -->
+
+    </div>
+
+  
+  </main>
+  <style>
+    /* form */
+    body {
+          
+            background-color: #f2f2f2;
+        }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        z-index: 10;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #f949fc;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color:  #f9abfa;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- <h2 class="contactUs">Contact Us</h2> -->
+    <form action="process_contact.php" method="POST"> <!-- Replace "process_contact.php" with your backend script for processing form data -->
+        <label class="contactUs" for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="" required>
+
+        <label class="contactUs" for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="" required>
+
+        <label class="contactUs" for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="" required>
+
+        <label  class="contactUs" for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here.." style="height:50px" required></textarea>
+
+        <input class="submit" ="submit" value="Submit">
+    </form>
+</div>
+
+ 
+  </body>
+</html>
+
+
+
+
