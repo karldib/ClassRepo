@@ -1,0 +1,65 @@
+<html lang="en">
+
+    <head>
+   
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">   
+        <title>VanillaJs</title>
+        <link rel="stylesheet" href="./index.css">
+        
+    </head>
+    
+    <body>
+
+        <div class="main">
+        <h1>Life is</h1>
+
+        
+        <!-- <button id="rollButton">...</button> -->
+    
+
+    </div>
+    <div class="result" id="randomWord"> </div>
+        <script type="text/javascript">
+            
+
+            
+
+               var textArray = ['beautiful','sad','you','me','suffering','perpetual change','strange','good','a tree', 'music',
+            'hard','absurd','a chicken', 'a game', 'a simulation', 'an everything bagel with cream chese', 'random','everything',
+            'existance','temporary','a journey', 'interesting','unserious','silly','the present','freedom','learning','love !'];
+           
+             
+
+            // console.log(randomElement)
+
+            function getRandomPastelColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return 'rgb(' + r + ',' + g + ',' + b + ')';}
+
+            document.addEventListener("click", function () {
+
+            var randomNumber = Math.floor(Math.random()*textArray.length);
+            var randomElement = textArray[randomNumber];
+        
+
+            document.getElementById("randomWord").innerText = randomElement;
+         
+            document.body.style.backgroundColor = getRandomPastelColor();
+            
+        })
+
+            
+            
+        
+
+        </script>
+       
+    
+
+        
+      
+   </body>
+</html>
