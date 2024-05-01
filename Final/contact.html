@@ -18,42 +18,48 @@
   
 
 <h1>Welcome to my Portfolio!</h1>
-<a href="https://editor.p5js.org/kaydib/full/QNIYhtgnE" target="_blank" left="5px">set me free !</a>
+<a class="setmefree" href="https://editor.p5js.org/kaydib/full/QNIYhtgnE" target="_blank" left="5px">set me free !</a>
 <!-- <p>This is a commentary on the overwhelming presence of advertising in our digital lives.</p> -->
 <hr>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Kay_D</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index4.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-       
+
+<div class=" container custom-container">
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Kay_D</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index4.html">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html" aria-current="page" >
+                about
+              </a>
+              <!-- <ul class="nav-item">
+                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul> 
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li> -->
+          </ul>
+          
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
+  
+
 <!-- JavaScript to display the pop-up ads -->
 <script>
 
@@ -71,112 +77,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-  // array of ad contents
-  var ads = [
-    {
-      heading: 'Who Am I?',
-      description: 'hello world! my name is kay dib and i am a creative specializing in art direction and ux design. i am also a sound artist, and my production and dj alias is cyclo bonette',
-      link: 'https://www.instagram.com/cyclobonette/'
-      
-    },
-    {
-      heading: '',
-      description: '',
-    //   picture: '../img/Trans.png',
-      
-    },
-    {
-      heading: 'The Selfie Toaster',
-      description: 'Start your day with a smile! Our Selfie Toaster will imprint your face on every slice of toast!'
-    },
-    {
-      heading: 'The Pet Translator',
-      description: 'Ever wonder what your cat is really thinking? With our Pet Translator, you\'ll finally understand your furry friend\'s meows and purrs. Warning: may contain shocking revelations!',
-      
-    },
-    {
-      heading: 'The Portable Hole',
-      description: 'Need more space? Our Portable Hole fits in your pocket and creates instant extra room wherever you go. Just don\'t lose your keys in it!',
-     
-    },
-    {
-      heading: 'The Bacon-Scented Air Freshener',
-      description: 'Love the smell of bacon in the morning? Now you can enjoy it all day long with our Bacon-Scented Air Freshener. Guaranteed to make your home smell sizzle-tastic!',
-      
-    },
-    {
-      heading: 'The Instant Muscle Spray',
-      description: 'Skip the gym and get ripped in seconds with our Instant Muscle Spray. Just one spritz and you\'ll have abs of steel, guaranteed to impress!',
-      
-    },
-    {
-      heading: 'The Inflatable Hiking Boots',
-      description: 'Trekking through the wilderness has never been easier! Our Inflatable Hiking Boots pack down to pocket size and inflate in seconds. Perfect for impromptu adventures!',
-     
-    },
-  ];
 
   
 
-  // Function to display a pop-up ad at a random position
-  function displayPopup(adIndex) {
-    // Create a new div element for the ad
-    var ad = document.createElement('div');
-   
-    
-
-    ad.setAttribute("id", "drag");
-
-   
-    
-    ad.className = 'popup';
-
-   ;
-
-    // Get ad content from the array
-var adContent = '<span class="popup-close" onclick="closePopup(this)">x</span>'; // Close X mark
-adContent += '<h2>' + ads[adIndex].heading + '</h2>';
-adContent += '<a href="' + ads[adIndex].link + '" target="_blank"> more </a>'; // Link
-adContent += '<p>' + ads[adIndex].description + '</p>';
-adContent += '<img src="'+ ads[adIndex].picture +' ">' ;
-// adContent += '<button onclick="closePopup(this)"> ' + ads[adIndex].buttonText + ' </button>';
-ad.innerHTML = adContent;
-
-    // Set random position for the ad
-    var screenWidth = window.innerWidth;
-    var screenHeight = window.innerHeight;
-    var randomX = Math.floor(Math.random() * (screenWidth - 300)); // Subtract ad width for positioning
-    var randomY = Math.floor(Math.random() * (screenHeight - 150)); // Subtract ad height for positioning
-    ad.style.left = randomX + 'px';
-    ad.style.top = randomY + 'px';
-
-    // Append the ad to the body of the document
-    document.body.appendChild(ad);
-
-    
-    ad.style.display = 'block';
-
-    // Setting timeout !
-    setTimeout(function() {
-      var nextAdIndex = (adIndex + 1) % ads.length;
-      displayPopup(nextAdIndex);
-    }, 10000); // Adjust the interval as needed
-  }
-
-  // Function to close a pop-up ad
-  function closePopup(button) {
-    var ad = button.parentNode; // Get the parent node (the ad div)
-    ad.style.display = 'none'; // Hide the ad
-    ad.parentNode.removeChild(ad); // Remove the ad from the DOM
-  }
-
-  // Start displaying ads
-  
-  displayPopup(0);
  
+
+  
  
 </script>
-<div class="mb-3">
+<form
+  action="https://formspree.io/f/mvoelabk"
+  method="POST"
+>
+
+<div class=" container custom-container pd-10">
+<div class="mb-4">
     <label for="exampleFormControlInput1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
@@ -187,6 +102,9 @@ ad.innerHTML = adContent;
 <div class="paragraph">
     <p> 
     </p></div>
+
+</div>
+</form>
 <!-- <a href="https://editor.p5js.org/kaydib/full/QNIYhtgnE">click to escape the world!</a> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>

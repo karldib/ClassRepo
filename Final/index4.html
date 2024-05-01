@@ -11,13 +11,17 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
- 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
 </head>
 <body>
     <iframe class="P5" style=" overflow: hidden;"  scrolling="no" frameborder="0" src="https://editor.p5js.org/kaydib/full/q23sTa7SF"></iframe>
   
+<div class="container">
+<h1 class="custom-title">Welcome to my Portfolio!</h1>
+</div>
 
-<h1 class="text-center">Welcome to my Portfolio!</h1>
+
 <a class="setmefree" href="https://editor.p5js.org/kaydib/full/QNIYhtgnE" target="_blank">set me free !</a>
 <!-- <p>This is a commentary on the overwhelming presence of advertising in our digital lives.</p> -->
 <hr>
@@ -71,37 +75,37 @@ document.addEventListener("DOMContentLoaded", function() {
      
     },
     {
-      heading: 'The Bacon-Scented Air Freshener',
-      description: 'Love the smell of bacon in the morning? Now you can enjoy it all day long with our Bacon-Scented Air Freshener. Guaranteed to make your home smell sizzle-tastic!',
+      heading: 'Visually Speaking',
+      description: 'i do design work for many causes, the link below has a poster that i designed for trans awareness',
+      link:'https://drive.google.com/file/d/1LwSUuPJgeS8m4dTOCyjZE4z29gJp8gPB/view?usp=sharing'
       
     },
-    {
-      heading: 'The Instant Muscle Spray',
-      description: 'Skip the gym and get ripped in seconds with our Instant Muscle Spray. Just one spritz and you\'ll have abs of steel, guaranteed to impress!',
+    // {
+    //   heading: 'The Instant Muscle Spray',
+    //   description: 'Skip the gym and get ripped in seconds with our Instant Muscle Spray. Just one spritz and you\'ll have abs of steel, guaranteed to impress!',
       
-    },
-    {
-      heading: 'The Inflatable Hiking Boots',
-      description: 'Trekking through the wilderness has never been easier! Our Inflatable Hiking Boots pack down to pocket size and inflate in seconds. Perfect for impromptu adventures!',
+    // },
+    // {
+    //   heading: 'The Inflatable Hiking Boots',
+    //   description: 'Trekking through the wilderness has never been easier! Our Inflatable Hiking Boots pack down to pocket size and inflate in seconds. Perfect for impromptu adventures!',
      
-    },
+    // },
   ];
 
-  
+  let counter = 0;
 
   // Function to display a pop-up ad at a random position
   function displayPopup(adIndex) {
     // Create a new div element for the ad
     var ad = document.createElement('div');
-   
-    
-
-    ad.setAttribute("id", "drag");
-
-   
     
     ad.className = 'popup';
+    
+    // ad.id='do something with the index number from yhr array here'
+    //then apply greensock draaggble using that id
 
+    ad.id=`draggable${counter}`
+    Draggable.create(`#draggable${counter}`);
    ;
 
     // Get ad content from the array
@@ -116,19 +120,20 @@ function displayPicture(){
     adContent += '<img src= "../img/UN-Ad.png" />';
 }
 
-if (adIndex ==2) {
-    displayPicture = true
-}else{
-    displayPicture = false
-}
+// if (adIndex ==2) {
+//     displayPicture = true
+// }else{
+//     displayPicture = false
+// }
 
 ad.innerHTML = adContent;
 
     // Set random position for the ad
     var screenWidth = window.innerWidth;
     var screenHeight = window.innerHeight;
-    var randomX = Math.floor(Math.random() * (screenWidth - 300)); // Subtract ad width for positioning
-    var randomY = Math.floor(Math.random() * (screenHeight - 150)); // Subtract ad height for positioning
+    var randomX = Math.floor(Math.random() * (screenWidth) - 150); // Subtract ad width for positioning
+    var randomY = Math.floor(Math.random() * (screenHeight) +100); // Subtract ad height for positioning
+    // var randomY = Math.floor(random.randint(450, 900))
     ad.style.left = randomX + 'px';
     ad.style.top = randomY + 'px';
 
@@ -141,6 +146,7 @@ ad.innerHTML = adContent;
     // Setting timeout !
     setTimeout(function() {
       var nextAdIndex = (adIndex + 1) % ads.length;
+      counter ++
       displayPopup(nextAdIndex);
     }, 10000); // Adjust the interval as needed
   }
@@ -159,6 +165,8 @@ ad.innerHTML = adContent;
  
 </script>
 
+<div class=" container custom-container">
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Kay_D</a>
@@ -168,37 +176,76 @@ ad.innerHTML = adContent;
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./index4.html">home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contact.html">Contact</a>
+            <a class="nav-link" href="./contact.html">contact</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html" aria-current="page" >
+              about
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+            <!-- <ul class="nav-item">
+              <!-- <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+            </ul> 
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
+          </li> -->
         </ul>
         
       </div>
     </div>
   </nav>
-  <img src="./img/photoshopped copy.png" alt="a picture of myself">
+</div>
+
+
+
+
+ <div class="container custom-container ">
+  <img  src="./img/photoshopped copy.png" alt="a picture of myself" class="rotating-image1  row align-items-center"  >
+  <!-- <img src="./img/IMG_9987 copy.png" alt="a picture of myself" class="rotating-image"> -->
+  
+  <!-- <img src="./img/photoshopped copy.png" alt="a picture of myself" class="rotating-image"> -->
+  <!-- <audio id="sound1" src="./img/SoundCollagebyKay.mp3" preload="auto"></audio>
+  <button onclick="document.getElementById('sound1').play();">background music</button> -->
+
+  <button id="ASong" onClick="playPause()">
+    <audio
+      src="./img/trimmed_audio_collage.mp3"
+      autoplay
+      loop
+    ></audio>
+    set the mood
+  </button>
+  
+  <script>
+    var aud = document.getElementById("ASong").children[0];
+    var isPlaying = false;
+    aud.pause();
+  
+    function playPause() {
+      if (isPlaying) {
+        aud.pause();
+      } else {
+        aud.play();
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+</div>
+  <!-- <img src="./img/Screen Shot 2024-04-27 at 9.36.23 PM.png" alt="squiggly lines"> -->
 <div class="paragraph">
     <p> 
     </p></div>
+
+   
 <!-- <a href="https://editor.p5js.org/kaydib/full/QNIYhtgnE">click to escape the world!</a> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+
 <script type="text/JavaScript">
     
     

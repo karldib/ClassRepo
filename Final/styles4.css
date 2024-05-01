@@ -96,9 +96,50 @@ head{
 img{
     border-radius: 15px;
     padding: 10%;
+    border: 10px black;
 
 }
 
 .setmefree{
     padding-left: 18px;
+}
+
+.custom-container {
+    max-width: 600px; /* Adjust the max-width as needed */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; }
+
+    @keyframes rotate {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+      
+      .rotating-image {
+        animation: rotate 10s linear infinite; 
+      }
+    
+      @keyframes rotate {x
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      
+      
+      .rotating-image1 {
+        animation: rotate 8s linear infinite; 
+       
+      }
+
+.custom-title{
+
+    margin-top: 20px;
+    font-weight: bold;
 }
